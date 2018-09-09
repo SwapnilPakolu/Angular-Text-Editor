@@ -1,0 +1,57 @@
+<div style="width:100%;" class="row" >
+    <div class="col-10 offset-1">
+            <button class="btn btn-default float-right  m-2"  (click)="editContent()"  *ngIf="!editMode"  title="edit" > <span class="fa fa-pencil-alt" ></span></button>
+            <button class="btn btn-default float-right  m-2"  (click)="editContent()"  *ngIf="editMode"  title="exit" ><span class="fa fa-window-close"></span></button>
+            <button class="btn btn-default float-right  m-2"  (click)="saveContent()"  *ngIf="editMode" title="save" > <span class="fa fa-save"></span></button>
+
+    </div>
+</div>
+
+<div class="row">
+<div class="col-10 offset-1">
+<span class="btn-group  float-left m-2"  *ngIf="editMode"> 
+
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<h1>')" title="heading 1"  >H1</button>
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<h2>')" title="heading 2"  >H2</button>
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<h3>')" title="heading 3"  >H3</button>
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<h4>')" title="heading 4"  >H4</button>
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<h5>')" title="heading 5"  >H5</button>
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<h6>')" title="heading 6"  >H6</button>
+</span>
+    <span class="btn-group  float-left m-2"  *ngIf="editMode"> 
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<p>')"  title="paragraph"  >p</button>
+            <button class="btn btn-default" (click)="changeSelectedState('formatBlock','<div>')"  title="division"  >div</button>
+        </span>
+
+        <span  class="btn-group  float-left m-2"  *ngIf="editMode">
+           
+            
+                <button class="btn btn-default" (click)="changeSelectedState('bold')" title="bold"  ><b>B</b></button>
+            <button class="btn btn-default" (click)="changeSelectedState('italic')" title="italic"  ><i>I</i></button>
+            <button class="btn btn-default" (click)="changeSelectedState('underline')" title="underline"  ><u>U</u></button>
+        </span>
+        
+        <span class="btn-group  float-left m-2"   *ngIf="editMode">
+
+
+            <button class="btn btn-default" (click)="addLink()" title="link"  ><span class="fa fa-link"></span></button>
+
+        </span>
+
+        <span class="btn-group  float-left m-2"   *ngIf="editMode">
+
+
+            <button class="btn btn-default" (click)="changeSelectedState('JUSTIFYLeft')" title="align left"  ><span class="fa fa-align-left" style="font-size:16px"></span></button>
+            <button class="btn btn-default" (click)="changeSelectedState('JUSTIFYCENTER')" title="align center"  ><span class="fa fa-align-center" style="font-size:16px"></span></button>
+            <button class="btn btn-default" (click)="changeSelectedState('JUSTIFYRight')" title="align right"  ><span class="fa fa-align-right" style="font-size:16px"></span></button>
+            <button class="btn btn-default" (click)="changeSelectedState('JUSTIFYfull')" title="justify"  ><span class="fa fa-align-justify" style="font-size:16px"></span></button>
+
+        </span>
+</div>
+</div>
+<div class="col-10 offset-1">
+<div  class="mt-2" id="editableContent" [attr.contenteditable]="editMode" [ngStyle]="myStyle"
+>
+<h1 style="text-align: justify;">This is a simple text editor built with Angular 2, Bootstrap and Font Awesome</h1><div style="text-align: justify;">click on the edit button to edit the text !!</div><h1 style="text-align: justify;">H1<br></h1><h2 style="color: rgb(51, 51, 51); text-align: justify;">H2</h2><h3 style="color: rgb(51, 51, 51); text-align: justify;">H3</h3><h4 style="color: rgb(51, 51, 51); text-align: justify;">H4</h4><h5 style="color: rgb(51, 51, 51); text-align: justify;">H4</h5><h6 style="color: rgb(51, 51, 51); text-align: justify;">H5<br></h6><p style="color: rgb(51, 51, 51); text-align: justify;">This is paragraph with <b>bold </b><i>italic </i>and <u>underline </u>within it.</p><div style="color: rgb(51, 51, 51); text-align: justify;">This is <u><a href="https://github.com/SwapnilPakolu/Angular-Text-Editor">link </a></u>to my github page for this text editor</div>
+</div>
+</div>
